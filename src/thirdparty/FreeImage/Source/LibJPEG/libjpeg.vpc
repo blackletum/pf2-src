@@ -1,0 +1,87 @@
+//-----------------------------------------------------------------------------
+//	LIBJPEG.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\..\..\.."
+$Macro OUTLIBDIR	"$SRCDIR\lib\common$PLATSUBDIR"
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE"
+		$PreprocessorDefinitions			"$BASE;STRICT"
+		$CompileAs							"Compile as C Code (/TC)"
+		$TreatWarningsAsErrors				"No (/WX-)"
+	}
+}
+
+$Project "LibJPEG"
+{
+	$Folder	"Source Files"
+	{
+		$File	"jaricom.c"
+		$File	"jcapimin.c"
+		$File	"jcapistd.c"
+		$File	"jcarith.c"
+		$File	"jccoefct.c"
+		$File	"jccolor.c"
+		$File	"jcdctmgr.c"
+		$File	"jchuff.c"
+		$File	"jcinit.c"
+		$File	"jcmainct.c"
+		$File	"jcmarker.c"
+		$File	"jcmaster.c"
+		$File	"jcomapi.c"
+		$File	"jcparam.c"
+		$File	"jcprepct.c"
+		$File	"jcsample.c"
+		$File	"jctrans.c"
+		$File	"jdapimin.c"
+		$File	"jdapistd.c"
+		$File	"jdarith.c"
+		$File	"jdatadst.c"
+		$File	"jdatasrc.c"
+		$File	"jdcoefct.c"
+		$File	"jdcolor.c"
+		$File	"jddctmgr.c"
+		$File	"jdhuff.c"
+		$File	"jdinput.c"
+		$File	"jdmainct.c"
+		$File	"jdmarker.c"
+		$File	"jdmaster.c"
+		$File	"jdmerge.c"
+		$File	"jdpostct.c"
+		$File	"jdsample.c"
+		$File	"jdtrans.c"
+		$File	"jerror.c"
+		$File	"jfdctflt.c"
+		$File	"jfdctfst.c"
+		$File	"jfdctint.c"
+		$File	"jidctflt.c"
+		$File	"jidctfst.c"
+		$File	"jidctint.c"
+		$File	"jmemmgr.c"
+		$File	"jmemnobs.c"
+		$File	"jquant1.c"
+		$File	"jquant2.c"
+		$File	"jutils.c"
+	}
+
+	$Folder	"Header Files"
+	{
+		$File	"jdct.h"
+		$File	"jerror.h"
+		$File	"jinclude.h"
+		$File	"jmemsys.h"
+		$File	"jpegint.h"
+		$File	"jversion.h"
+		$File	"jconfig.h"
+		$File	"jmorecfg.h"
+		$File	"jpeglib.h"
+	}
+}

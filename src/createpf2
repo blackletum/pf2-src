@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pushd `dirname $0`
+devtools/bin/vpc /pf2beta +game /mksln pf2
+popd

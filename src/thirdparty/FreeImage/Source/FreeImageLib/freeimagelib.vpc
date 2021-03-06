@@ -1,0 +1,119 @@
+//-----------------------------------------------------------------------------
+//	FREEIMAGELIB.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\..\..\.."
+$Macro OUTLIBDIR	"$SRCDIR\lib\common$PLATSUBDIR"
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE;..\;..\FreeImage;..\ZLib;..\DeprecationManager;$SRCDIR\public\freeimage;"
+		$PreprocessorDefinitions			"$BASE;OPJ_STATIC;FREEIMAGE_LIB;_CRT_SECURE_NO_DEPRECATE;LIBRAW_NODLL"
+		$TreatWarningsAsErrors				"No (/WX-)"
+	}
+}
+
+$Project "freeimagelib"
+{
+	$Folder "Header Files"
+	{
+		$File	"..\CacheFile.h"
+		$File	"..\MapIntrospector.h"
+		$File	"..\Metadata\FIRational.h"
+		$File	"$SRCDIR\public\freeimage\FreeImage.h"
+		$File	"..\FreeImageIO.h"
+		$File	"..\Metadata\FreeImageTag.h"
+		$File	"..\Plugin.h"
+		$File	"..\Quantizers.h"
+		$File	"..\ToneMapping.h"
+		$File	"..\Utilities.h"
+	}
+	
+	$Folder	"Source Files"
+	{
+		$Folder	"Conversion"
+		{
+			$File	"..\FreeImage\Conversion.cpp"
+			$File	"..\FreeImage\Conversion16_555.cpp"
+			$File	"..\FreeImage\Conversion16_565.cpp"
+			$File	"..\FreeImage\Conversion24.cpp"
+			$File	"..\FreeImage\Conversion32.cpp"
+			$File	"..\FreeImage\Conversion4.cpp"
+			$File	"..\FreeImage\Conversion8.cpp"
+			$File	"..\FreeImage\ConversionFloat.cpp"
+			$File	"..\FreeImage\ConversionRGB16.cpp"
+			$File	"..\FreeImage\ConversionRGBA16.cpp"
+			$File	"..\FreeImage\ConversionRGBF.cpp"
+			$File	"..\FreeImage\ConversionRGBAF.cpp"
+			$File	"..\FreeImage\ConversionType.cpp"
+			$File	"..\FreeImage\ConversionUINT16.cpp"
+			$File	"..\FreeImage\Halftoning.cpp"
+			$File	"..\FreeImage\tmoColorConvert.cpp"
+			$File	"..\FreeImage\tmoDrago03.cpp"
+			$File	"..\FreeImage\tmoFattal02.cpp"
+			$File	"..\FreeImage\tmoReinhard05.cpp"
+			$File	"..\FreeImage\ToneMapping.cpp"
+		}
+		$Folder	"Metadata"
+		{
+			$File	"..\Metadata\Exif.cpp"
+			$File	"..\Metadata\FIRational.cpp"
+			$File	"..\Metadata\FreeImageTag.cpp"
+			$File	"..\Metadata\IPTC.cpp"
+			$File	"..\Metadata\TagConversion.cpp"
+			$File	"..\Metadata\TagLib.cpp"
+		}
+		$Folder	"MultiPaging"
+		{
+			$File	"..\FreeImage\CacheFile.cpp"
+			$File	"..\FreeImage\MultiPage.cpp"
+			$File	"..\FreeImage\ZLibInterface.cpp"
+		}
+		$Folder	"Plugins"
+		{
+			$File	"..\FreeImage\Plugin.cpp"
+			$File	"..\FreeImage\PluginBMP.cpp"
+			$File	"..\FreeImage\PluginJPEG.cpp"
+			$File	"..\FreeImage\PluginPNG.cpp"
+			$File	"..\FreeImage\PluginTARGA.cpp"
+			//$File	"..\FreeImage\PluginWebP.cpp"
+			//$File	"..\FreeImage\PluginGIF.cpp"
+		}
+		$Folder	"Quantizers"
+		{
+			$File	"..\FreeImage\LFPQuantizer.cpp"
+			$File	"..\FreeImage\NNQuantizer.cpp"
+			$File	"..\FreeImage\WuQuantizer.cpp"
+		}
+		$File	"..\FreeImage\BitmapAccess.cpp"
+		$File	"..\FreeImage\ColorLookup.cpp"
+		$File	"..\FreeImage\FreeImage.cpp"
+		$File	"..\FreeImage\FreeImageIO.cpp"
+		$File	"..\FreeImage\GetType.cpp"
+		$File	"..\FreeImage\MemoryIO.cpp"
+		$File	"..\FreeImage\PixelAccess.cpp"
+	}
+	
+	$Folder	"Toolkit Files"
+	{
+		$File	"..\FreeImageToolkit\Background.cpp"
+		$File	"..\FreeImageToolkit\BSplineRotate.cpp"
+		$File	"..\FreeImageToolkit\Channels.cpp"
+		$File	"..\FreeImageToolkit\ClassicRotate.cpp"
+		$File	"..\FreeImageToolkit\Colors.cpp"
+		$File	"..\FreeImageToolkit\CopyPaste.cpp"
+		$File	"..\FreeImageToolkit\Display.cpp"
+		$File	"..\FreeImageToolkit\Flip.cpp"
+		$File	"..\FreeImageToolkit\JPEGTransform.cpp"
+		$File	"..\FreeImageToolkit\MultigridPoissonSolver.cpp"
+		$File	"..\FreeImageToolkit\Rescale.cpp"
+		$File	"..\FreeImageToolkit\Resize.cpp"
+		$File	"..\FreeImageToolkit\Resize.h"
+	}
+}

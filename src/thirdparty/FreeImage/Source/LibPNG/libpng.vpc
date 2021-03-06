@@ -1,0 +1,54 @@
+//-----------------------------------------------------------------------------
+//	LIBPNG.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\..\..\.."
+$Macro OUTLIBDIR	"$SRCDIR\lib\common$PLATSUBDIR"
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE;../ZLib;"
+		$PreprocessorDefinitions			"$BASE;STRICT;_LIB;_CRT_SECURE_NO_DEPRECATE"
+		$CompileAs							"Compile as C Code (/TC)"
+		$TreatWarningsAsErrors				"No (/WX-)"
+	}
+}
+
+$Project "LibPNG"
+{
+	$Folder	"Source Files"
+	{
+		$File	"png.c"
+		$File	"pngerror.c"
+		$File	"pngget.c"
+		$File	"pngmem.c"
+		$File	"pngpread.c"
+		$File	"pngread.c"
+		$File	"pngrio.c"
+		$File	"pngrtran.c"
+		$File	"pngrutil.c"
+		$File	"pngset.c"
+		$File	"pngtrans.c"
+		$File	"pngwio.c"
+		$File	"pngwrite.c"
+		$File	"pngwtran.c"
+		$File	"pngwutil.c"
+	}
+
+	$Folder	"Header Files"
+	{
+		$File	"png.h"
+		$File	"pngpriv.h"
+	}
+	
+	$Folder	"Link Libraries"
+	{
+		$Lib "$LIBCOMMON\zlib"
+	}
+}

@@ -1,0 +1,79 @@
+//-----------------------------------------------------------------------------
+//	LIBOPENJPEG.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\..\..\.."
+$Macro OUTLIBDIR	"$SRCDIR\lib\common$PLATSUBDIR"
+
+$include "$SRCDIR\vpc_scripts\source_lib_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories		"$BASE"
+		$PreprocessorDefinitions			"$BASE;_LIB;OPJ_STATIC;_CRT_SECURE_NO_DEPRECATE"
+		$CompileAs							"Compile as C Code (/TC)"
+		$TreatWarningsAsErrors				"No (/WX-)"
+	}
+}
+
+$Project "LibOpenJPEG"
+{
+	$Folder	"Source Files"
+	{
+		$File	"bio.c"
+		$File	"cio.c"
+		$File	"dwt.c"
+		$File	"event.c"
+		$File	"function_list.c"
+		$File	"image.c"
+		$File	"invert.c"
+		$File	"j2k.c"
+		$File	"jp2.c"
+		$File	"mct.c"
+		$File	"mqc.c"
+		$File	"openjpeg.c"
+		$File	"opj_clock.c"
+		$File	"pi.c"
+		$File	"raw.c"
+		$File	"t1.c"
+		$File	"t2.c"
+		$File	"tcd.c"
+		$File	"tgt.c"
+	}
+
+	$Folder	"Header Files"
+	{
+		$File	"bio.h"
+		$File	"cio.h"
+		$File	"dwt.h"
+		$File	"event.h"
+		$File	"function_list.h"
+		$File	"image.h"
+		$File	"indexbox_manager.h"
+		$File	"invert.h"
+		$File	"j2k.h"
+		$File	"jp2.h"
+		$File	"mct.h"
+		$File	"mqc.h"
+		$File	"openjpeg.h"
+		$File	"opj_clock.h"
+		$File	"opj_config.h"
+		$File	"opj_config_private.h"
+		$File	"opj_includes.h"
+		$File	"opj_intmath.h"
+		$File	"opj_inttypes.h"
+		$File	"opj_malloc.h"
+		$File	"opj_stdint.h"
+		$File	"pi.h"
+		$File	"raw.h"
+		$File	"t1.h"
+		$File	"t1_luts.h"
+		$File	"t2.h"
+		$File	"tcd.h"
+		$File	"tgt.h"
+	}
+}

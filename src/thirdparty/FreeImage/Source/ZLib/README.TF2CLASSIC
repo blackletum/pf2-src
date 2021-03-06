@@ -1,0 +1,3 @@
+CFLAGS=-m32 ./configure
+sudo make install
+cp libz.a ../../../../lib/common/linux32/zlib.a
