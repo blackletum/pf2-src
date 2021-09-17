@@ -1,4 +1,4 @@
-//====== Copyright © 1996-2005, Valve Corporation, All rights reserved. =======//
+//====== Copyright  1996-2005, Valve Corporation, All rights reserved. =======//
 //
 // Purpose: TF Base Rockets.
 //
@@ -343,7 +343,7 @@ void CTFBaseProjectile::ProjectileTouch( CBaseEntity *pOther )
 		data.m_vOrigin = pNewTrace->endpos;
 		data.m_vNormal = vForward;
 		data.m_nEntIndex = 0;
-		data.m_nMaterial = pOwner->GetTeamNumber();
+		data.m_nMaterial = pOwner ? pOwner->GetTeamNumber() : 0;
 
 		if ( IsNail() )
 		{
